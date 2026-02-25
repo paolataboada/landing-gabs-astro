@@ -1,0 +1,120 @@
+---
+import { Image } from "astro:assets";
+import GradientBorderContainer from "../ui/components/GradientBorderContainer.astro";
+import ArrowLeftIcon from "@icons/arrow-icon.svg";
+import ScreenMobile from "@images/sweepstakes/ScreeGamesmobile.png";
+import WysaroLogo from "@images/logos/wysaro.png";
+import MotionWrapper from "../ui/containers/MotionWrapper";
+import { WhatsappButton } from "../buttons/WhatsappButton";
+
+const SWEEPSTAKESTECH_WEB = "https://sweepstakestech.com/";
+---
+
+<section id="sweepstakes-platform" class="relative">
+  <MotionWrapper
+    client:load
+    animation="scale"
+    type="spring"
+    stiffness={250}
+    damping={20}
+    scale={1.2}
+    viewportAmount={0.3}
+    className="w-full py-8 px-4 md:py-16 md:px-8 xl:px-[120px]"
+  >
+    <div
+      class="relative flex flex-col gap-2 border-2 border-sweepstakes-500 bg-neutral-900 rounded-3xl pt-8 px-6 max-w-fit mx-auto
+            lg:flex-row lg:justify-center lg:gap-14 lg:mx-auto lg:py-0 lg:px-[105px]"
+    >
+      <div
+        class="order-1 lg:order-2 lg:pt-20 lg:pb-16 lg:w-[500px] lg:min-w-[500px] flex flex-col justify-center"
+      >
+        <!-- Mobile: centrado encima del h2 -->
+        <Image
+          src={WysaroLogo}
+          alt="Wysaro Logo"
+          class="w-[81px] h-[72px] mx-auto mb-4 lg:hidden"
+        />
+        <!-- Desktop: esquina superior derecha -->
+        <Image
+          src={WysaroLogo}
+          alt="Wysaro Logo"
+          class="hidden lg:block absolute right-[33px] top-[24px] w-[81px] h-[72px]"
+        />
+
+        <h2
+          class="font-semibold text-center text-[32px] leading-[120%]
+                    drop-shadow-[0px_0px_24px_rgba(255,255,255,0.40)]
+                    lg:text-start"
+        >
+          Ready for <br />a fully automated
+          <span
+            class="block text-sweepstakes-500 drop-shadow-[0px_0px_24px_rgba(255,255,255,0.20)]"
+          >
+            Sweepstakes Platform?
+          </span>
+        </h2>
+
+        <div
+          class="grid gap-4 w-full font-light text-center text-base leading-[130%] mt-2 lg:text-start"
+        >
+          <p class="text-neutral-500 font-light">
+            Launch your own site, boost revenue, and simplify operations. 🚀
+          </p>
+        </div>
+
+        <div class="flex justify-center lg:justify-start">
+          <GradientBorderContainer
+            background="linear-gradient(90deg, var(--color-sweepstakes-500) 0%, var(--color-sweepstakes-900) 100%)"
+            class="rounded-full w-fit cursor-pointer mt-10"
+            ><a
+              href={SWEEPSTAKESTECH_WEB}
+              target="_blank"
+              aria-label="Explore Sweeptakes Tech Web"
+              class="flex items-center
+            gap-[10px] rounded-full py-[13px] px-6 group"
+            >
+              <span
+                class="font-semibold text-lg drop-shadow-[0px_0px_12px_rgba(255,255,255,0.56)]
+                                transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]
+                                group-hover:translate-x-8"
+              >
+                Let's Talk!
+              </span>
+              <Image
+                src={ArrowLeftIcon}
+                alt="Arrow Left Icon"
+                class="w-6 h-6 transition-transform duration-300 group-hover:-translate-x-[100px]"
+              />
+            </a>
+          </GradientBorderContainer>
+        </div>
+      </div>
+
+      <div
+        class="relative grid justify-center w-full overflow-hidden order-2
+                lg:order-1 lg:w-[418px] lg:min-w-[418px] lg:h-[525px] lg:pt-[25px]"
+      >
+        <Image
+          src={ScreenMobile}
+          alt="Sweepstakes Platform Screen"
+          class="relative -bottom-8 w-full max-w-[300px]
+                    lg:absolute lg:-bottom-[50px] lg:max-w-[418px] lg:left-1/2 lg:-translate-x-1/2"
+        />
+      </div>
+
+      <div
+        class="absolute top-1/2 -translate-y-1/2 -left-1 w-1 h-full rounded-l-full max-h-[600px]
+          bg-linear-to-b from-sweepstakes-900 to-sweepstakes-500
+          md:w-2 md:-left-2 lg:max-h-[400px] lg:from-sweepstakes-500 lg:to-sweepstakes-900"
+      >
+      </div>
+      <div
+        class="absolute top-1/2 -translate-y-1/2 -right-1 w-1 h-full rounded-e-full max-h-[600px]
+          bg-linear-to-b from-sweepstakes-900 to-sweepstakes-500
+          md:w-2 md:-right-2 lg:max-h-[400px] lg:from-sweepstakes-500 lg:to-sweepstakes-900"
+      >
+      </div>
+    </div>
+  </MotionWrapper>
+  <WhatsappButton />
+</section>

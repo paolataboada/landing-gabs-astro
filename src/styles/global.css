@@ -1,1 +1,126 @@
 @import "tailwindcss";
+
+:root {
+    --base-white: #FFFFFF;
+    --base-grey: #9E9E9E;
+    --brand-pink: #DB248E;
+    --brand-orange: #9EFF62;
+    --background-01: #16040E;
+    --background-02: #181A15;
+}
+
+@theme{
+
+--color-neutral-50: #ffffff;
+--color-neutral-100: #f8f8f8;
+--color-neutral-200: #e9e9e9;
+--color-neutral-300: #d1d1d1;
+--color-neutral-400: #d9d9d9;
+--color-neutral-500: #797979;
+--color-neutral-600: #525252;
+--color-neutral-700: #2c2c2c;
+--color-neutral-800: #1f1f1f;
+--color-neutral-900: #000000;
+
+--color-primary-50: #ffefff;
+  --color-primary-100: #fc9ff4;
+  --color-primary-300: #f086ea;
+  --color-primary-500: #cb1cc0;
+  --color-primary-900: #120011;
+
+  --color-secondary-50: #f4ffdf;
+  --color-secondary-100: #e2ff98;
+  --color-secondary-300: #cff181;
+  --color-secondary-500: #b2fe00;
+  --color-secondary-900: #0f1900;
+
+  --color-sweepstakes-500: #00BECE;
+  --color-sweepstakes-900: #B20AFA;
+}
+
+@font-face {
+    font-family: 'Sora';
+    src: url('/fonts/Sora/Sora-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sora';
+    src: url('/fonts/Sora/Sora-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sora';
+    src: url('/fonts/Sora/Sora-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sora';
+    src: url('/fonts/Sora/Sora-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sora';
+    src: url('/fonts/Sora/Sora-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sora';
+    src: url('/fonts/Sora/Sora-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sora';
+    src: url('/fonts/Sora/Sora-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sora';
+    src: url('/fonts/Sora/Sora-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+html,
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #120011;
+    color: white;
+    font-family: "Sora", sans-serif;
+}
+.whatsapp-button {
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  background: radial-gradient(305.42% 141.42% at 100% 100%, #21C941 0%, #43EC62 100%);
+  box-shadow: 0 0 25.714px 0 #16653F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}

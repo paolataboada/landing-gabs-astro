@@ -1,0 +1,12 @@
+---
+import AlertIcon from "../../icons/AlertIcon.astro";
+
+const { alert, customClass } = Astro.props;
+---
+
+<p 
+    class={`flex justify-stretch items-center gap-2 font-medium text-[var(--brand-orange)]
+    text-lg leading-[150%] mt-5 mb-4 ${customClass}`}>
+    <AlertIcon customClass="w-4 h-4 min-w-4 min-h-4" />
+    {alert}
+</p>

@@ -1,0 +1,19 @@
+---
+import { parseText } from "../../../utils/parse-text";
+
+const { steps } = Astro.props;
+---
+
+<div class="relative pl-8 space-y-6">
+    <div class="absolute h-full w-0.5 bg-[var(--background-02)]" />
+    {steps.map((step: string, index: number) => (
+        <div class="relative flex items-start mb-2 last-of-type:border-l-2 last-of-type:border-[var(--background-01)]">
+            <span 
+                class="absolute -left-4 w-8 h-8 bg-[var(--background-02)] text-white flex items-center 
+                justify-center rounded-full text-sm font-bold">
+                {index + 1}
+            </span>
+            <p set:html={parseText(step)} class="ml-8 mt-1 mb-4"></p>
+        </div>
+    ))}
+</div>

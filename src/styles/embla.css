@@ -1,0 +1,84 @@
+.embla {
+    position: relative;
+    overflow: hidden;
+}
+
+.embla__viewport {
+    overflow: hidden;
+}
+
+.embla__container {
+    display: flex;
+    gap: 28px;
+}
+
+.embla__slide {
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Grilla de 3x3 */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 12px;
+}
+
+.game-card {
+    width: 107px;
+}
+
+.game-image {
+    width: 100%;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+/* Dots */
+.embla__dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 8px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 9999px;
+    background-color: var(--background-02);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.dot--active {
+    width: 31px;
+    background: linear-gradient(90deg, var(--brand-pink) 0%, var(--brand-orange) 100%);
+}
+
+@media (max-width: 768px) {
+    .game-card {
+        width: calc(100px + 2vw);
+    }
+}
+
+@media (max-width: 390px) {
+    .grid-container {
+        grid-gap: 10px;
+    }
+    
+    .game-card {
+        width: 100px;
+    }
+}
+
+@media (max-width: 365px) {
+    .grid-container {
+        grid-gap: 8px;
+    }
+
+    .game-card {
+        width: 85px;
+    }
+}

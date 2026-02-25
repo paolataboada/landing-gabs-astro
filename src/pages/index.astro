@@ -1,19 +1,14 @@
 ---
-import "../styles/global.css";
+import Hero from "@/components/sections/Hero.astro";
+import Layout from "../layouts/Layout.astro";
+import PopularGames from "@/components/sections/PopularGames.astro";
+import SweepstakesPlatform from "@/components/sections/SweepstakesPlatform.astro";
+import Features from "@/components/sections/Features.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<div class="bg-black flex justify-center items-center h-screen">
-			<h1 class="font-bold text-4xl text-white">Astro</h1>
-		</div>
-	</body>
-</html>
+<Layout>
+  <Hero />
+  <PopularGames />
+  <Features />
+  <SweepstakesPlatform />
+</Layout>

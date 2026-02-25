@@ -1,0 +1,55 @@
+---
+interface Props {
+  border?: string;
+  background: string;
+  backdropFilter?: string;
+  class?: string;
+}
+
+const { border, background, backdropFilter, class: cn } = Astro.props;
+
+const backgroundStyle = {
+  background,
+  position: "absolute",
+  top: 0,
+  left: 0,
+  right: 0,
+  bottom: 0,
+  borderRadius: "inherit",
+  zIndex: 0,
+};
+
+const gradientBorderStyle = {
+  position: "absolute",
+  top: 0,
+  left: 0,
+  right: 0,
+  bottom: 0,
+  background: border,
+  zIndex: 0,
+  borderRadius: "inherit",
+  padding: "2px",
+  WebkitMask:
+    "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+  WebkitMaskComposite: "xor",
+  maskComposite: "exclude",
+};
+
+const backdropStyle = {
+  backdropFilter,
+  margin: "2px",
+  width: "calc(100% - 4px)",
+};
+---
+
+<div data-item="container" class={`relative inline-block ${cn}`}>
+  <div data-item="background" style={backgroundStyle}></div>
+  <div
+    data-item="backdrop"
+    class="relative z-1"
+    style={backdropFilter ? backdropStyle : {}}
+  >
+    <slot />
+  </div>
+  {border && <div data-item="border-gradient" style={gradientBorderStyle} />}
+</div>

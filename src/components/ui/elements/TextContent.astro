@@ -1,0 +1,7 @@
+---
+import { parseText } from "../../../utils/parse-text";
+
+const { text, customClass } = Astro.props;
+---
+
+<p set:html={parseText(text)} class={`mb-2 last-of-type:mb-4 ${customClass}`}></p>

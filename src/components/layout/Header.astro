@@ -1,0 +1,92 @@
+---
+import { Image } from "astro:assets";
+import LogoGabs from "@images/logos/gabs.png";
+import ArrowLeftIcon from "@assets/icons/arrow-icon.svg";
+
+import MobileMenu from "@components/ui/components/MobileMenu";
+import MotionWrapper from "@components/ui/containers/MotionWrapper";
+import GradientBorderContainer from "@components/ui/components/GradientBorderContainer.astro";
+import NavLink from "@components/ui/elements/NavLink";
+
+const GABS_TELEGRAM = "https://t.me/+51970102209";
+---
+
+<header
+  class="fixed top-0 w-full border-b border-secondary-500 bg-[rgba(18,0,11,0.72)] backdrop-blur-lg z-30"
+>
+  <MotionWrapper
+    client:load
+    animation="fade"
+    duration={0.8}
+    ease="backOut"
+    viewportAmount={0}
+  >
+    <div
+      data-radial="gradient-header"
+      class="hidden absolute -top-[198px] -left-[106px] w-[250px] h-[250px] blur-[150px]
+        bg-radial-[at_50%_50%] from-(--brand-orange) from-30% to-(--brand-pink) to-100% z-0 md:block"
+    >
+    </div>
+
+    <div
+      class="flex justify-between items-center h-[88px] px-4 w-full
+             md:h-[92px] md:px-[144px] md:py-[6px]"
+    >
+      <div class="flex items-center gap-4">
+        <MobileMenu client:only />
+        <a href="/" aria-label="Go to Homepage" class="cursor-pointer">
+          <Image
+            src={LogoGabs}
+            alt="GABS SOLUTIONS"
+            class="h-[72px] w-[72px]"
+            loading="eager"
+          />
+        </a>
+      </div>
+
+      <!-- Centro: Nav -->
+      <nav class="hidden md:flex md:items-center">
+        <ul class="flex items-center gap-8">
+          <li><NavLink client:only to="games" text="Games" /></li>
+          <li><NavLink client:only to="features" text="Features" /></li>
+          <li>
+            <NavLink
+              client:only
+              to="sweepstakes-platform"
+              text="Sweepstakes Platform"
+            />
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Derecha: Botón -->
+      <GradientBorderContainer
+        background="transparent"
+        border="linear-gradient(98.71deg, var(--brand-orange) -0.15%, var(--brand-pink) 99.85%)"
+        class="rounded-full w-fit cursor-pointer"
+      >
+        <a
+          href={GABS_TELEGRAM}
+          target="_blank"
+          aria-label="Chat with our support team now"
+          class="flex items-center gap-[10px] rounded-full py-[13px] px-6 group"
+        >
+          <span
+            class="font-semibold text-lg whitespace-nowrap drop-shadow-[0px_0px_12px_rgba(255,255,255,0.56)]
+              transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]
+              group-hover:translate-x-8 lg:group-hover:translate-x-8"
+          >
+            <span class="md:hidden lg:inline">Chat with us</span>
+            <span class="hidden md:inline lg:hidden">Chat</span>
+          </span>
+          <Image
+            src={ArrowLeftIcon}
+            alt="Arrow Left Icon"
+            class="w-6 h-6 transition-transform duration-300
+              group-hover:-translate-x-[105px] lg:group-hover:-translate-x-[105px]"
+          />
+        </a>
+      </GradientBorderContainer>
+    </div>
+  </MotionWrapper>
+</header>

@@ -1,0 +1,9 @@
+---
+import { parseText } from "../../../utils/parse-text";
+
+const { items, customClass } = Astro.props;
+---
+
+<ul class={`list-disc ps-6 mb-4 ${customClass}`}>
+    {items.map((item: string) => <li set:html={parseText(item)} class="mt-3 first-of-type:break-all"></li>)}
+</ul>

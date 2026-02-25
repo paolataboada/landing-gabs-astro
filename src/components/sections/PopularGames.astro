@@ -1,0 +1,59 @@
+---
+import { Image } from "astro:assets";
+import FireIcon from "../../assets/icons/fire-icon.svg";
+import LobbyPopularGames from "@ui/components/LobbyPopularGames";
+import CarouselPopularGames from "@ui/components/CarouselPopularGames";
+import { popular_games } from "../../data/popular-games";
+import MotionWrapper from "@ui/containers/MotionWrapper";
+---
+
+<section id="games">
+  <MotionWrapper
+    client:load
+    animation="slideUp"
+    type="tween"
+    duration={1}
+    ease="backOut"
+    delay={0.5}
+    viewportAmount={0.2}
+    className="relative flex flex-col justify-center items-center gap-6 py-10 px-4 md:py-14"
+  >
+    <div class="flex flex-col items-center gap-4">
+      <Image src={FireIcon} alt="Fire Icon" class="w-14 h-14" />
+
+      <h2
+        class="font-semibold text-[32px] leading-[120%] drop-shadow-[0px_0px_24px_rgba(255,255,255,0.20)]"
+      >
+        <span
+          class="bg-linear-to-r from-(--brand-orange) to-(--brand-pink) text-transparent bg-clip-text"
+        >
+          Popular
+        </span>
+        <span class="drop-shadow-[0px_0px_24px_rgba(255,255,255,0.40)]">
+          Games
+        </span>
+      </h2>
+    </div>
+
+    <div class="hidden relative z-1 md:block">
+      <LobbyPopularGames client:only games={popular_games} />
+    </div>
+
+    <div class="flex z-1 w-full md:hidden lg:px-0">
+      <CarouselPopularGames client:only games={popular_games} />
+    </div>
+
+    <div
+      data-radial="gradient-popular-games-1"
+      class="hidden absolute top-[204px] right-[82px] w-[150px] h-[150px] blur-[125px]
+        bg-radial-[at_50%_50%] from-(--brand-orange) to-(--brand-orange) z-0 md:block"
+    >
+    </div>
+    <div
+      data-radial="gradient-popular-games-2"
+      class="hidden absolute bottom-[302px] left-[104px] w-[150px] h-[150px] blur-[125px]
+        bg-radial-[at_50%_50%] from-(--brand-pink) to-(--brand-pink) z-0 md:block"
+    >
+    </div>
+  </MotionWrapper>
+</section>
