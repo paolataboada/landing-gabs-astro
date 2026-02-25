@@ -15,7 +15,8 @@
       "@icons/*": ["src/assets/icons/*"],
       "@data/*": ["src/data/*"],
       "@ui/*": ["src/components/ui/*"],
-      "@constants/*": ["src/constants/*"]
+      "@constants/*": ["src/constants/*"],
+      "@buttons/*": ["src/components/buttons/*"],
     }
   }
 }

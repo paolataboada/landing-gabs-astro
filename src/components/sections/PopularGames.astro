@@ -18,11 +18,10 @@ import MotionWrapper from "@ui/containers/MotionWrapper";
     viewportAmount={0.2}
     className="relative flex flex-col justify-center items-center gap-6 py-10 px-4 md:py-14"
   >
-    <div class="flex flex-col items-center gap-4">
+    <div class="flex flex-col items-center gap-4 md:flex-row">
       <Image src={FireIcon} alt="Fire Icon" class="w-14 h-14" />
-
       <h2
-        class="font-semibold text-[32px] leading-[120%] drop-shadow-[0px_0px_24px_rgba(255,255,255,0.20)]"
+        class="font-semibold text-[32px] leading-[120%] text-center drop-shadow-[0px_0px_24px_rgba(255,255,255,0.20)] md:text-start"
       >
         <span
           class="bg-linear-to-r from-(--brand-orange) to-(--brand-pink) text-transparent bg-clip-text"
@@ -34,7 +33,6 @@ import MotionWrapper from "@ui/containers/MotionWrapper";
         </span>
       </h2>
     </div>
-
     <div class="hidden relative z-1 md:block">
       <LobbyPopularGames client:only games={popular_games} />
     </div>

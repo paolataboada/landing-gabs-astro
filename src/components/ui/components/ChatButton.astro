@@ -1,0 +1,41 @@
+---
+import { Image } from "astro:assets";
+import IconWhatsappFill from "@assets/icons/whatsapp-icon.svg";
+import { CONTACT_LINKS } from "@/constants/contact";
+import GradientBorderContainer from "./GradientBorderContainer.astro";
+
+const isSelected = false;
+---
+
+<GradientBorderContainer
+  background={isSelected
+    ? "linear-gradient(270deg, var(--brand-orange) 0%, var(--brand-pink) 100%)"
+    : "transparent"}
+  border={isSelected
+    ? "transparent"
+    : "linear-gradient(98.71deg, var(--brand-orange) -0.15%, var(--brand-pink) 99.85%)"}
+  class="rounded-full w-fit cursor-pointer overflow-hidden"
+>
+  <a
+    href={CONTACT_LINKS.whatsapp}
+    target="_blank"
+    aria-label="Chat with our support team now"
+    class="flex items-center gap-[10px] rounded-full py-[13px] px-6 group overflow-hidden"
+  >
+    <span
+      class="font-semibold text-lg whitespace-nowrap drop-shadow-[0px_0px_12px_rgba(255,255,255,0.56)]
+      transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]
+      group-hover:translate-x-[30px]"
+    >
+      <span class="md:hidden lg:inline">Chat with us</span>
+      <span class="hidden md:inline lg:hidden">Chat</span>
+    </span>
+
+    <Image
+      src={IconWhatsappFill}
+      alt="Whatsapp Icon"
+      class="w-6 h-6 transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]
+      group-hover:-translate-x-[125px]"
+    />
+  </a>
+</GradientBorderContainer>

@@ -26,42 +26,35 @@ import { CARD_BANNERS } from "../../data/card-banners";
             href={banner.link}
             target="_blank"
             aria-label={`Got to ${banner.title} Now`}
-            style="border-radius: 24px; border-left: 3px solid var(--color-primary-500); border-right: 3px solid var(--color-primary-500); box-shadow: 0 0 12px 0 rgba(203, 28, 192, 0.80);"
-            class="relative grid justify-items-center items-center justify-center content-center gap-2 
-    w-full h-[291px] rounded-3xl overflow-hidden text-center px-6
-    md:justify-end md:gap-6 md:h-[264px] md:px-12"
+            style="border-left: 3px solid var(--color-primary-500); border-right: 3px solid var(--color-primary-500); box-shadow: 0 0 12px 0 rgba(203, 28, 192, 0.80);"
+            class="relative grid justify-items-center items-center justify-center content-center gap-2
+              w-full h-[291px] rounded-3xl overflow-hidden text-center px-6
+              md:justify-end md:gap-6 md:h-[264px] md:px-12"
           >
             <Image
               src={banner.image}
               alt={banner.seoAlt}
-              class="absolute w-full h-full object-cover object-[20%] -z-1"
+              class="absolute inset-0 w-full h-full object-cover object-[20%] -z-1"
             />
             <Image
               src={BackgroundPieces}
-              alt="Background of pieces"
-              class={`h-[1000px] w-[1147px] absolute left-[90%] -bottom-[210%] object-cover scale-[300] 
-                      bg-[rgba(0,0,0,0.65)] -z-1 md:-left-[10%] md:-bottom-[220%] md:bg-[rgba(0,0,0,0.2)]`}
-              loading="lazy"
-              decoding="async"
+              alt=""
               aria-hidden="true"
-              sizes="(max-width: 768px) 480px, (max-width: 1024px) 768px, 1147px"
+              class="absolute inset-0 w-full h-full object-cover"
             />
             <div
               class="absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(180deg, rgba(203, 28, 192, 0.12) 0%, rgba(18, 0, 17, 0.12) 100%)",
-              }}
+              style="background: linear-gradient(180deg, rgba(203, 28, 192, 0.12) 0%, rgba(18, 0, 17, 0.12) 100%);"
             />
             <Image
               src={banner.icon}
               alt={`${banner.title} Icon`}
-              class="w-10 h-10 object-cover mb-1"
+              class="w-10 h-10 mb-1 relative z-1"
             />
-            <h4 class="font-semibold text-white text-[32px] leading-[120%] drop-shadow-[0px_0px_24px_rgba(255,255,255,0.40)] md:text-[40px] md:leading-[120%]">
+            <h4 class="relative z-1 font-semibold text-white text-[32px] leading-[120%] drop-shadow-[0px_0px_24px_rgba(255,255,255,0.40)] md:text-[40px] md:leading-[120%]">
               {banner.title}
             </h4>
-            <p class="w-full max-w-[300px] font-normal text-white text-xl leading-[130%] md:max-w-[400px]">
+            <p class="relative z-1 w-full max-w-[300px] font-normal text-white text-xl leading-[130%] md:max-w-[400px]">
               {banner.description}
             </p>
           </a>

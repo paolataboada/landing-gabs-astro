@@ -1,19 +1,19 @@
 import type { ImageMetadata } from "astro";
-import OldenRagon from '@images/popular-games/Games.png';
+import PandaMaster from '@images/popular-games/Games.png';
 import UltraPanda from '@images/popular-games/Games (1).png';
-import CashMachine from '@images/popular-games/Games (2).png';
-import Game3 from '@images/popular-games/Games (3).png';
-import ColorfulOrchard from '@images/popular-games/Games (4).png';
-import CrazyBirds from '@images/popular-games/Games (5).png';
-import DragonSlayer from '@images/popular-games/Games (6).png';
-import FireKirin from '@images/popular-games/Games (7).png';
-import FishermansWharf from '@images/popular-games/Games (8).png';
-import FruitMary from '@images/popular-games/Games (9).png';
-import GhostsNGoblins from '@images/popular-games/Games (10).png';
-import GodOfFortune from '@images/popular-games/Games (11).png';
-import HaiDilao from '@images/popular-games/Games (12).png';
-import HappyDuck from '@images/popular-games/Games (13).png';
-import HappyHour from '@images/popular-games/Games (14).png';
+import OldenRagon from '@images/popular-games/Games (2).png';
+import OrionStars from '@images/popular-games/Games (3).png';
+import AcerBook from '@images/popular-games/Games (4).png';
+import Game from '@images/popular-games/Games (5).png';
+import ClubVpower from '@images/popular-games/Games (6).png';
+import MagicCity from '@images/popular-games/Games (7).png';
+import Juwa from '@images/popular-games/Games (8).png';
+import BlueDragon from '@images/popular-games/Games (9).png';
+import Glamour from '@images/popular-games/Games (10).png';
+import LegendFire from '@images/popular-games/Games (11).png';
+import GameVault from '@images/popular-games/Games (12).png';
+import GalaxyWorld from '@images/popular-games/Games (13).png';
+import RiverSweeps from '@images/popular-games/Games (14).png';
 
 export interface IPopularGame {
     name: string;
@@ -23,9 +23,9 @@ export interface IPopularGame {
 
 export const popular_games: IPopularGame[] = [
     {
-        name: 'Olden Ragon',
-        image: OldenRagon,
-        seoAlt: "Olden Ragon"
+        name: 'Panda Master',
+        image: PandaMaster,
+        seoAlt: "Panda Master"
     },
     {
         name: 'Ultra Panda',
@@ -33,68 +33,68 @@ export const popular_games: IPopularGame[] = [
         seoAlt: "Ultra Panda"
     },
     {
-        name: 'Cash Machine',
-        image: CashMachine,
-        seoAlt: "Cash Machine"
+        name: 'Olden Ragon',
+        image: OldenRagon,
+        seoAlt: "Olden Ragon"
     },
     {
-        name: 'Game 3',
-        image: Game3,
-        seoAlt: "Game 3"
+        name: 'Orion Stars',
+        image: OrionStars,
+        seoAlt: "Orion Stars"
     },
     {
-        name: 'Colorful Orchard',
-        image: ColorfulOrchard,
-        seoAlt: "Colorful Orchard"
+        name: 'Acer Book',
+        image: AcerBook,
+        seoAlt: "Acer Book"
     },
     {
-        name: 'Crazy Birds',
-        image: CrazyBirds,
-        seoAlt: "Crazy Birds"
+        name: 'Game',
+        image: Game,
+        seoAlt: "Game"
     },
     {
-        name: 'Dragon Slayer',
-        image: DragonSlayer,
-        seoAlt: "Dragon Slayer"
+        name: 'Club V Power',
+        image: ClubVpower,
+        seoAlt: "Club V Power"
     },
     {
-        name: 'Fire Kirin',
-        image: FireKirin,
-        seoAlt: "Fire Kirin"
+        name: 'Magic City',
+        image: MagicCity,
+        seoAlt: "Magic City"
     },
     {
-        name: "Fisherman's Wharf",
-        image: FishermansWharf,
-        seoAlt: "Fisherman's Wharf"
+        name: 'Juwa',
+        image: Juwa,
+        seoAlt: "Juwa"
     },
     {
-        name: 'Fruit Mary',
-        image: FruitMary,
-        seoAlt: "Fruit Mary"
+        name: 'Blue Dragon',
+        image: BlueDragon,
+        seoAlt: "Blue Dragon"
     },
     {
-        name: 'Ghosts N Goblins',
-        image: GhostsNGoblins,
-        seoAlt: "Ghosts N Goblins"
+        name: 'Glamour',
+        image: Glamour,
+        seoAlt: "Glamour"
     },
     {
-        name: 'God Of Fortune',
-        image: GodOfFortune,
-        seoAlt: "God Of Fortune"
+        name: 'Legend Fire',
+        image: LegendFire,
+        seoAlt: "Legend Fire"
     },
     {
-        name: 'Hai Dilao',
-        image: HaiDilao,
-        seoAlt: "Hai Dilao"
+        name: 'Game Vault',
+        image: GameVault,
+        seoAlt: "Game Vault"
     },
     {
-        name: 'Happy Duck',
-        image: HappyDuck,
-        seoAlt: "Happy Duck"
+        name: 'Galaxy World',
+        image: GalaxyWorld,
+        seoAlt: "Galaxy World"
     },
     {
-        name: 'Happy Hour',
-        image: HappyHour,
-        seoAlt: "Happy Hour"
+        name: 'River Sweeps',
+        image: RiverSweeps,
+        seoAlt: "River Sweeps"
     },
 ]

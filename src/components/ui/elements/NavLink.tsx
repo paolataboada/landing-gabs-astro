@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-scroll';
 
 type Props = {
     to: string;
     text: string;
     offset?: number;
-    duration?: number;
     className?: string;
     onClick?: () => void;
 };
@@ -20,42 +18,44 @@ const MENU_ITEM_ACTIVE_CLASS = `font-semibold !text-white
 const NavLink: React.FC<Props> = ({
     to,
     text,
-    offset = -80,
-    duration = 500,
+    offset = -88,
     className,
     onClick,
 }) => {
     const [active, setActive] = useState(false);
 
     useEffect(() => {
-        const checkHash = () => {
-            setActive(window.location.hash === `#${to}`);
+        const checkActive = () => {
+            const el = document.getElementById(to);
+            if (!el) return;
+
+            const rect = el.getBoundingClientRect();
+            setActive(rect.top <= 120 && rect.bottom > 0);
         };
 
-        window.addEventListener("hashchange", checkHash);
-        checkHash();
+        window.addEventListener("scroll", checkActive, { passive: true });
+        checkActive();
 
-        return () => window.removeEventListener("hashchange", checkHash);
+        return () => window.removeEventListener("scroll", checkActive);
     }, [to]);
 
     const handleClick = () => {
+        const el = document.getElementById(to);
+        if (!el) return;
+
+        const top = el.getBoundingClientRect().top + window.scrollY + offset;
+        window.scrollTo({ top, behavior: "smooth" });
         window.history.pushState(null, "", `#${to}`);
-        window.dispatchEvent(new Event("hashchange"));
-        onClick && onClick();
+        onClick?.();
     };
 
     return (
-        <Link
-            href={`#${to}`}
-            to={to}
+        <span
             onClick={handleClick}
-            spy={true}
-            smooth={true}
-            offset={offset}
-            duration={duration}
-            className={`${MENU_ITEM_CLASS} ${active ? MENU_ITEM_ACTIVE_CLASS : ""} ${className}`}>
+            className={`${MENU_ITEM_CLASS} ${active ? MENU_ITEM_ACTIVE_CLASS : ""} ${className ?? ""}`}
+        >
             {text}
-        </Link>
+        </span>
     );
 };
 

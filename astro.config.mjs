@@ -18,6 +18,7 @@ export default defineConfig({
         '@icons': path.resolve('./src/assets/icons'),
         '@data': path.resolve('./src/data'),
         '@ui': path.resolve('./src/components/ui'),
+        '@buttons': path.resolve('./src/components/buttons'),
       },
     },
   },

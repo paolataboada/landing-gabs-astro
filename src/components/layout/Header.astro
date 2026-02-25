@@ -1,14 +1,10 @@
 ---
 import { Image } from "astro:assets";
 import LogoGabs from "@images/logos/gabs.png";
-import ArrowLeftIcon from "@assets/icons/arrow-icon.svg";
-
 import MobileMenu from "@components/ui/components/MobileMenu";
 import MotionWrapper from "@components/ui/containers/MotionWrapper";
-import GradientBorderContainer from "@components/ui/components/GradientBorderContainer.astro";
 import NavLink from "@components/ui/elements/NavLink";
-
-const GABS_TELEGRAM = "https://t.me/+51970102209";
+import ChatButton from "../ui/components/ChatButton.astro";
 ---
 
 <header
@@ -30,7 +26,7 @@ const GABS_TELEGRAM = "https://t.me/+51970102209";
 
     <div
       class="flex justify-between items-center h-[88px] px-4 w-full
-             md:h-[92px] md:px-[144px] md:py-[6px]"
+             md:h-[92px] gap-auto md:px-[144px] md:py-[6px]"
     >
       <div class="flex items-center gap-4">
         <MobileMenu client:only />
@@ -44,7 +40,6 @@ const GABS_TELEGRAM = "https://t.me/+51970102209";
         </a>
       </div>
 
-      <!-- Centro: Nav -->
       <nav class="hidden md:flex md:items-center">
         <ul class="flex items-center gap-8">
           <li><NavLink client:only to="games" text="Games" /></li>
@@ -59,34 +54,7 @@ const GABS_TELEGRAM = "https://t.me/+51970102209";
         </ul>
       </nav>
 
-      <!-- Derecha: Botón -->
-      <GradientBorderContainer
-        background="transparent"
-        border="linear-gradient(98.71deg, var(--brand-orange) -0.15%, var(--brand-pink) 99.85%)"
-        class="rounded-full w-fit cursor-pointer"
-      >
-        <a
-          href={GABS_TELEGRAM}
-          target="_blank"
-          aria-label="Chat with our support team now"
-          class="flex items-center gap-[10px] rounded-full py-[13px] px-6 group"
-        >
-          <span
-            class="font-semibold text-lg whitespace-nowrap drop-shadow-[0px_0px_12px_rgba(255,255,255,0.56)]
-              transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]
-              group-hover:translate-x-8 lg:group-hover:translate-x-8"
-          >
-            <span class="md:hidden lg:inline">Chat with us</span>
-            <span class="hidden md:inline lg:hidden">Chat</span>
-          </span>
-          <Image
-            src={ArrowLeftIcon}
-            alt="Arrow Left Icon"
-            class="w-6 h-6 transition-transform duration-300
-              group-hover:-translate-x-[105px] lg:group-hover:-translate-x-[105px]"
-          />
-        </a>
-      </GradientBorderContainer>
+      <ChatButton />
     </div>
   </MotionWrapper>
 </header>

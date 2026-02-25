@@ -1,11 +1,12 @@
 ---
 import { Image } from "astro:assets";
 import GradientBorderContainer from "../ui/components/GradientBorderContainer.astro";
-import ArrowLeftIcon from "@icons/arrow-icon.svg";
+import TelegramIcon from "@icons/telegram.svg";
 import ScreenMobile from "@images/sweepstakes/ScreeGamesmobile.png";
 import WysaroLogo from "@images/logos/wysaro.png";
 import MotionWrapper from "../ui/containers/MotionWrapper";
 import { WhatsappButton } from "../buttons/WhatsappButton";
+import { CONTACT_LINKS } from "@/constants/contact";
 
 const SWEEPSTAKESTECH_WEB = "https://sweepstakestech.com/";
 ---
@@ -28,13 +29,11 @@ const SWEEPSTAKESTECH_WEB = "https://sweepstakestech.com/";
       <div
         class="order-1 lg:order-2 lg:pt-20 lg:pb-16 lg:w-[500px] lg:min-w-[500px] flex flex-col justify-center"
       >
-        <!-- Mobile: centrado encima del h2 -->
         <Image
           src={WysaroLogo}
           alt="Wysaro Logo"
           class="w-[81px] h-[72px] mx-auto mb-4 lg:hidden"
         />
-        <!-- Desktop: esquina superior derecha -->
         <Image
           src={WysaroLogo}
           alt="Wysaro Logo"
@@ -65,25 +64,26 @@ const SWEEPSTAKESTECH_WEB = "https://sweepstakestech.com/";
         <div class="flex justify-center lg:justify-start">
           <GradientBorderContainer
             background="linear-gradient(90deg, var(--color-sweepstakes-500) 0%, var(--color-sweepstakes-900) 100%)"
-            class="rounded-full w-fit cursor-pointer mt-10"
-            ><a
-              href={SWEEPSTAKESTECH_WEB}
+            class="rounded-full w-fit cursor-pointer mt-10 overflow-hidden"
+          >
+            <a
+              href={CONTACT_LINKS.telegram}
               target="_blank"
               aria-label="Explore Sweeptakes Tech Web"
-              class="flex items-center
-            gap-[10px] rounded-full py-[13px] px-6 group"
+              class="flex items-center gap-[10px] rounded-full py-[13px] px-6 group overflow-hidden"
             >
               <span
-                class="font-semibold text-lg drop-shadow-[0px_0px_12px_rgba(255,255,255,0.56)]
-                                transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]
-                                group-hover:translate-x-8"
+                class="font-semibold text-lg whitespace-nowrap drop-shadow-[0px_0px_12px_rgba(255,255,255,0.56)]
+        transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]
+        group-hover:translate-x-[30px]"
               >
-                Let's Talk!
+                Talk to Sales
               </span>
               <Image
-                src={ArrowLeftIcon}
-                alt="Arrow Left Icon"
-                class="w-6 h-6 transition-transform duration-300 group-hover:-translate-x-[100px]"
+                src={TelegramIcon}
+                alt="Telegram Icon"
+                class="w-6 h-6 transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]
+        group-hover:-translate-x-[125px]"
               />
             </a>
           </GradientBorderContainer>
