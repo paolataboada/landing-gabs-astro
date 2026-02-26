@@ -1,11 +1,19 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 import path from 'path';
+import mdx from '@astrojs/mdx';
+import sitemap from '@astrojs/sitemap';
+import compress from 'astro-compress';
 
 export default defineConfig({
-  integrations: [react()],
+  integrations: [mdx(), sitemap(), react(), compress()],
+  compressHTML: true,
+  output: 'static',
+  build: {
+    inlineStylesheets: 'auto',
+    assetsPrefix: '.',
+  },
   vite: {
     plugins: [tailwindcss()],
     resolve: {
