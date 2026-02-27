@@ -22,14 +22,12 @@ import { CARD_BANNERS } from "../../data/card-banners";
           viewportAmount={0.3}
           className="w-full"
         >
-          <a
-            href={banner.link}
-            target="_blank"
+          <div
             aria-label={`Got to ${banner.title} Now`}
             style="border-left: 3px solid var(--color-primary-500); border-right: 3px solid var(--color-primary-500); box-shadow: 0 0 12px 0 rgba(203, 28, 192, 0.80);"
-            class="relative grid justify-items-center items-center justify-center content-center gap-2
+            class="relative grid justify-items-center items-center justify-center content-center
               w-full h-[291px] rounded-3xl overflow-hidden text-center px-6
-              md:justify-end md:gap-6 md:h-[264px] md:px-12"
+              md:justify-center md:h-[369px] md:px-12"
           >
             <Image
               src={banner.image}
@@ -51,13 +49,13 @@ import { CARD_BANNERS } from "../../data/card-banners";
               alt={`${banner.title} Icon`}
               class="w-10 h-10 mb-1 relative z-1"
             />
-            <h4 class="relative z-1 font-semibold text-white text-[32px] leading-[120%] drop-shadow-[0px_0px_24px_rgba(255,255,255,0.40)] md:text-[40px] md:leading-[120%]">
+            <h4 class="relative z-1 font-semibold text-white text-[32px] leading-[120%] drop-shadow-[0px_0px_24px_rgba(255,255,255,0.40)] md:text-[40px] md:leading-[120%] pt-3">
               {banner.title}
             </h4>
-            <p class="relative z-1 w-full max-w-[300px] font-normal text-white text-xl leading-[130%] md:max-w-[400px]">
+            <p class="relative z-1 w-full max-w-[300px] font-normal text-white text-xl leading-[130%] md:max-w-[400px] pt-2">
               {banner.description}
             </p>
-          </a>
+          </div>
         </MotionWrapper>
       ))
     }

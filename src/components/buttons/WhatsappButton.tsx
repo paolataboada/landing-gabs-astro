@@ -1,12 +1,11 @@
 import { CONTACT_LINKS } from "@constants/contact";
 import IconWhatsappFill from "@/components/icons/IconwhatsappFill";
 
-
 export const WhatsappButton = () => {
   return (
-    <div className="absolute right-0 bottom-0 flex flex-col items-center justify-center gap-4 px-8 py-10">
+    <div className="fixed right-0 bottom-0 flex flex-col items-center justify-center gap-4 px-8 py-10 z-10">
       <a
-       href={CONTACT_LINKS.whatsapp}
+        href={CONTACT_LINKS.whatsapp}
         target="_blank"
         rel="noopener noreferrer"
       >

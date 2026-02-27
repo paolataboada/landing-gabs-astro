@@ -2,13 +2,11 @@
 import { Image } from "astro:assets";
 import MacauScreenMobile from "../../assets/images/hero/screen-mobile.png";
 import CheckIcon from "../../assets/icons/check-icon.svg";
-import ArrowLeftIcon from "../../assets/icons/arrow-icon.svg";
-import GradientBorderContainer from "../ui/components/GradientBorderContainer.astro";
-import MarqueeHero from "../ui/components/MarqueeHero";
+import MarqueeHero from "@ui/components/MarqueeHero";
 import { hero_cards } from "../../data/hero-cards";
-import MotionWrapper from "../ui/containers/MotionWrapper";
-import { CONTACT_LINKS } from "@/constants/contact";
-import IconWhatsappFill from "@assets/icons/whatsapp-icon.svg";
+import MotionWrapper from "@ui/containers/MotionWrapper";
+import ChatButton from "@ui/components/ChatButton";
+import ViewButton from "@ui/components/ViewButton.astro";
 
 const HERO_SHADOW_STYLES =
   "background: linear-gradient(270deg, rgba(24, 2, 25, 0.00) 0%, var(--background-01) 100%)";
@@ -85,68 +83,10 @@ const isSelected = false;
       </ul>
 
       <div
-        class="flex flex-col gap-6 mt-10 xl:flex-row xl:items-center xl:mt-12"
+        class="flex flex-col gap-4 mt-10 items-center sm:flex-row sm:justify-center md:justify-start w-full"
       >
-        <GradientBorderContainer
-          background="linear-gradient(270deg, var(--brand-orange) 0%, var(--brand-pink) 100%)"
-          class="rounded-full w-full cursor-pointer xl:w-fit"
-          ><a
-            href="/SistemaPorcentajesRosado.pdf"
-            download
-            target="_blank"
-            aria-label="Chat with our support team now"
-            class="flex justify-center items-center gap-[10px] rounded-full
-          py-[14px] px-6 group overflow-hidden"
-          >
-            <span
-              class="font-semibold text-lg drop-shadow-[0px_0px_12px_rgba(255,255,255,0.56)]
-          transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]
-          group-hover:translate-x-8"
-            >
-              View Fees
-            </span>
-            <Image
-              src={ArrowLeftIcon}
-              alt="Arrow Left Icon"
-              aria-hidden="true"
-              class="w-6 h-6 transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]
-          group-hover:-translate-x-[105px]"
-            />
-          </a>
-        </GradientBorderContainer>
-
-        <GradientBorderContainer
-          background={isSelected
-            ? "linear-gradient(270deg, var(--brand-orange) 0%, var(--brand-pink) 100%)"
-            : "transparent"}
-          border={isSelected
-            ? "transparent"
-            : "linear-gradient(98.71deg, var(--brand-orange) -0.15%, var(--brand-pink) 99.85%)"}
-          class="rounded-full w-full cursor-pointer overflow-hidden xl:w-fit"
-          ><a
-            href={CONTACT_LINKS.whatsapp}
-            target="_blank"
-            aria-label="Chat with our support team now"
-            class="flex
-          justify-center items-center gap-[10px] rounded-full py-[13px] px-6 group
-          overflow-hidden"
-          >
-            <span
-              class="font-semibold text-lg whitespace-nowrap drop-shadow-[0px_0px_12px_rgba(255,255,255,0.56)]
-          transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]
-          group-hover:translate-x-[30px]"
-            >
-              <span class="md:hidden lg:inline">Chat with us</span>
-              <span class="hidden md:inline lg:hidden">Chat</span>
-            </span>
-            <Image
-              src={IconWhatsappFill}
-              alt="Whatsapp Icon"
-              class="w-6 h-6 transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]
-          group-hover:-translate-x-[125px]"
-            />
-          </a>
-        </GradientBorderContainer>
+        <ViewButton class="w-auto" />
+        <ChatButton client:load />
       </div>
     </div>
 
