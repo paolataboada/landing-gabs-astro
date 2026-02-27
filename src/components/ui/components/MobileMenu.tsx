@@ -2,12 +2,8 @@ import { useState } from "react";
 import LogoGabs from "@images/logos/gabs.png";
 import MenuIcon from "@icons/menu-icon.svg";
 import CloseIcon from "@icons/close-icon.svg";
-import WhatsappIcon from "@icons/whatsapp-icon.svg";
 import NavLink from "../elements/NavLink";
-import GradientBorderContainer from "./GradientBorderContainer.astro";
-import { CONTACT_LINKS } from "@/constants/contact";
-
-const MACAU_TELEGRAM = 'https://t.me/';
+import ChatButton from "./ChatButton";
 
 const MobileMenu: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -50,48 +46,12 @@ const MobileMenu: React.FC = () => {
 
                 <ul className="flex flex-col items-center gap-8 pt-8 pb-12">
                     <li><NavLink to="games" text="Games" onClick={closeMenu} /></li>
-					<li><NavLink to="features" text="Features" onClick={closeMenu} /></li>
-					<li><NavLink to="sweepstakes-platform" text="Sweepstakes Platform" onClick={closeMenu} /></li>
+                    <li><NavLink to="features" text="Features" onClick={closeMenu} /></li>
+                    <li><NavLink to="sweepstakes-platform" text="Sweepstakes Platform" onClick={closeMenu} /></li>
                 </ul>
 
-                <div className="grid justify-center mb-8">
-                    <div id="mobile_menu_container" className="relative inline-block rounded-full w-fit mx-auto cursor-pointer">
-                        <div id="mobile_menu_background" className="absolute inset-0 bg-transparent rounded-full z-0" />
-                        <div id="mobile_menu_content" className="relative z-5">
-                            <a
-                                href={CONTACT_LINKS.whatsapp}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="Chat with our support team now"
-                                className="flex items-center gap-[10px] rounded-full py-[13px] px-6 group">
-                                <span 
-                                    className="font-semibold text-lg drop-shadow-[0px_0px_12px_rgba(255,255,255,0.56)] 
-                                    transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] 
-                                    group-hover:translate-x-8 md:group-hover:translate-0 md:w-min 
-                                    lg:group-hover:translate-x-8 lg:w-auto">
-                                    Chat With Us!
-                                </span>
-                                <img
-                                    src={WhatsappIcon.src}
-                                    alt="Arrow Left Icon"
-                                    loading="lazy"
-                                    className="w-6 h-6 transition-transform duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] 
-                                    group-hover:-translate-x-[105px] md:hidden md:group-hover:translate-0 
-                                    lg:block lg:group-hover:-translate-x-[105px]"
-                                />
-                            </a>
-                        </div>
-                        <div
-                            id="mobile_menu_border_gradient"
-                            className="absolute inset-0 bg-linear-to-r from-(--brand-orange) to-(--brand-pink)
-                            z-0 rounded-full p-0.5"
-                            style={{
-                                WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-                                WebkitMaskComposite: "xor",
-                                maskComposite: "exclude",
-                            }}
-                        />
-                    </div>
+                <div className="flex justify-center mb-8 px-4">
+                    <ChatButton alwaysShowBorder />
                 </div>
             </nav>
         </>

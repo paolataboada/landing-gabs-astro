@@ -1,34 +1,35 @@
 ---
 import { Image } from "astro:assets";
-import IconWhatsappFill from "@assets/icons/whatsapp-icon.svg";
-import { CONTACT_LINKS } from "@/constants/contact";
+import ArrowLeftIcon from "@assets/icons/arrow-icon.svg";
 import GradientBorderContainer from "./GradientBorderContainer.astro";
 ---
 
 <div class="chat-wrapper w-full sm:w-fit">
   <GradientBorderContainer
-    background="linear-gradient(270deg, var(--brand-orange) 0%, var(--brand-pink) 100%)"
-    border="transparent"
+    background="transparent"
+    border="linear-gradient(98.71deg, var(--brand-orange) -0.15%, var(--brand-pink) 99.85%)"
     class="rounded-full w-full sm:w-fit cursor-pointer overflow-hidden transition-all duration-300"
-    ><a
-      href={CONTACT_LINKS.whatsapp}
+  >
+    <a
+      href="/SistemaPorcentajesRosado.pdf"
+      download
       target="_blank"
-      aria-label="Chat with our support team now"
+      aria-label="View Fees "
       class="chat-btn flex items-center justify-center gap-[10px] rounded-full py-[13px] px-6 group overflow-hidden w-full sm:w-auto"
     >
       <span
         class="font-semibold text-lg whitespace-nowrap text-white
         transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]
-        group-hover:translate-x-[30px]"
+        group-hover:translate-x-[20px]"
       >
-        <span>Chat with us</span>
+        <span>View Fees</span>
       </span>
 
       <Image
-        src={IconWhatsappFill}
+        src={ArrowLeftIcon}
         alt="Whatsapp Icon"
         class="w-6 h-6 transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]
-        group-hover:-translate-x-[125px]"
+        group-hover:-translate-x-[110px]"
       />
     </a>
   </GradientBorderContainer>
@@ -36,14 +37,14 @@ import GradientBorderContainer from "./GradientBorderContainer.astro";
 
 <style>
   .chat-wrapper:hover :global([data-item="background"]) {
-    background: transparent !important;
+    background: linear-gradient(
+      270deg,
+      var(--brand-orange) 0%,
+      var(--brand-pink) 100%
+    ) !important;
   }
 
   .chat-wrapper:hover :global([data-item="border-gradient"]) {
-    background: linear-gradient(
-      98.71deg,
-      var(--brand-orange) -0.15%,
-      var(--brand-pink) 99.85%
-    ) !important;
+    background: transparent !important;
   }
 </style>

@@ -14,7 +14,9 @@ const MENU_ITEM_CLASS = `font-normal text-white text-2xl leading-[130%]
 
 const MENU_ITEM_ACTIVE_CLASS = `font-semibold !text-white 
     drop-shadow-[0px_0px_12px_rgba(255,255,255,0.56)]`;
-  
+
+const SECTIONS = ["games", "features", "sweepstakes-platform"];
+
 const NavLink: React.FC<Props> = ({
     to,
     text,
@@ -26,11 +28,25 @@ const NavLink: React.FC<Props> = ({
 
     useEffect(() => {
         const checkActive = () => {
-            const el = document.getElementById(to);
-            if (!el) return;
+            let closestId: string | null = null;
+            let closestDistance = Infinity;
 
-            const rect = el.getBoundingClientRect();
-            setActive(rect.top <= 120 && rect.bottom > 0);
+            for (const id of SECTIONS) {
+                const el = document.getElementById(id);
+                if (!el) continue;
+
+                const rect = el.getBoundingClientRect();
+                const threshold = 120;
+                if (rect.top <= threshold) {
+                    const distance = Math.abs(rect.top - threshold);
+                    if (distance < closestDistance) {
+                        closestDistance = distance;
+                        closestId = id;
+                    }
+                }
+            }
+
+            setActive(closestId === to);
         };
 
         window.addEventListener("scroll", checkActive, { passive: true });

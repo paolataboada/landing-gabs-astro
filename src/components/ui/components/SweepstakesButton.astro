@@ -1,34 +1,35 @@
 ---
 import { Image } from "astro:assets";
-import IconWhatsappFill from "@assets/icons/whatsapp-icon.svg";
+import Icontelegram from "@assets/icons/telegram.svg";
 import { CONTACT_LINKS } from "@/constants/contact";
 import GradientBorderContainer from "./GradientBorderContainer.astro";
 ---
 
-<div class="chat-wrapper w-full sm:w-fit">
+<div class="chat-wrapper">
   <GradientBorderContainer
-    background="linear-gradient(270deg, var(--brand-orange) 0%, var(--brand-pink) 100%)"
+    background={`linear-gradient(270deg, var(--color-sweepstakes-500) 0%, var(--color-sweepstakes-900) 100%)`}
     border="transparent"
-    class="rounded-full w-full sm:w-fit cursor-pointer overflow-hidden transition-all duration-300"
-    ><a
-      href={CONTACT_LINKS.whatsapp}
+    class="rounded-full w-full cursor-pointer overflow-hidden transition-all duration-300"
+  >
+    <a
+      href={CONTACT_LINKS.telegram}
       target="_blank"
       aria-label="Chat with our support team now"
-      class="chat-btn flex items-center justify-center gap-[10px] rounded-full py-[13px] px-6 group overflow-hidden w-full sm:w-auto"
+      class="chat-btn flex items-center justify-center gap-[10px] rounded-full py-3 px-4 sm:py-[13px] sm:px-6 group overflow-hidden w-full sm:w-auto"
     >
       <span
         class="font-semibold text-lg whitespace-nowrap text-white
         transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]
-        group-hover:translate-x-[30px]"
+        group-hover:translate-x-[20px] sm:group-hover:translate-x-[30px]"
       >
-        <span>Chat with us</span>
+        Talk to Sales
       </span>
 
       <Image
-        src={IconWhatsappFill}
-        alt="Whatsapp Icon"
+        src={Icontelegram}
+        alt="Telegram Icon"
         class="w-6 h-6 transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]
-        group-hover:-translate-x-[125px]"
+        group-hover:-translate-x-[50px] sm:group-hover:-translate-x-[125px]"
       />
     </a>
   </GradientBorderContainer>
@@ -42,8 +43,8 @@ import GradientBorderContainer from "./GradientBorderContainer.astro";
   .chat-wrapper:hover :global([data-item="border-gradient"]) {
     background: linear-gradient(
       98.71deg,
-      var(--brand-orange) -0.15%,
-      var(--brand-pink) 99.85%
+      var(--color-sweepstakes-500) -0.15%,
+      var(--color-sweepstakes-900) 99.85%
     ) !important;
   }
 </style>

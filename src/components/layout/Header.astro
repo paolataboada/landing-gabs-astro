@@ -4,7 +4,7 @@ import LogoGabs from "@images/logos/gabs.png";
 import MobileMenu from "@components/ui/components/MobileMenu";
 import MotionWrapper from "@components/ui/containers/MotionWrapper";
 import NavLink from "@components/ui/elements/NavLink";
-import ChatButton from "../ui/components/ChatButton.astro";
+import ChatButton from "@ui/components/ChatButton.astro";
 ---
 
 <header
@@ -53,8 +53,9 @@ import ChatButton from "../ui/components/ChatButton.astro";
           </li>
         </ul>
       </nav>
-
-      <ChatButton />
+      <div class="w-fit shrink-0">
+        <ChatButton />
+      </div>
     </div>
   </MotionWrapper>
 </header>
