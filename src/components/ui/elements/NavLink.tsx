@@ -28,31 +28,48 @@ const NavLink: React.FC<Props> = ({
 
     useEffect(() => {
         const checkActive = () => {
-            let closestId: string | null = null;
-            let closestDistance = Infinity;
+            const scrollY = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const docHeight = document.documentElement.scrollHeight;
 
-            for (const id of SECTIONS) {
-                const el = document.getElementById(id);
-                if (!el) continue;
+            const atBottom = scrollY + windowHeight >= docHeight - 10;
 
-                const rect = el.getBoundingClientRect();
-                const threshold = 120;
-                if (rect.top <= threshold) {
-                    const distance = Math.abs(rect.top - threshold);
-                    if (distance < closestDistance) {
-                        closestDistance = distance;
-                        closestId = id;
+            let activeId: string | null = null;
+
+            if (atBottom) {
+                activeId = SECTIONS[SECTIONS.length - 1];
+            } else {
+                let closestId: string | null = null;
+                let closestDistance = Infinity;
+                const threshold = 150;
+
+                for (const id of SECTIONS) {
+                    const el = document.getElementById(id);
+                    if (!el) continue;
+
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top <= threshold) {
+                        const distance = Math.abs(rect.top - threshold);
+                        if (distance < closestDistance) {
+                            closestDistance = distance;
+                            closestId = id;
+                        }
                     }
                 }
+
+                activeId = closestId;
             }
 
-            setActive(closestId === to);
+            setActive(activeId === to);
         };
 
         window.addEventListener("scroll", checkActive, { passive: true });
-        checkActive();
+        const timeout = setTimeout(checkActive, 100);
 
-        return () => window.removeEventListener("scroll", checkActive);
+        return () => {
+            window.removeEventListener("scroll", checkActive);
+            clearTimeout(timeout);
+        };
     }, [to]);
 
     const handleClick = () => {
