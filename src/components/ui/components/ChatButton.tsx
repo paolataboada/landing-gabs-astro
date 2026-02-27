@@ -6,7 +6,7 @@ interface Props {
   className?: string;
 }
 
-const DEFAULT_BG = "linear-gradient(270deg, var(--brand-orange) 0%, var(--brand-pink) 100%)";
+const DEFAULT_BG = "linear-gradient(270deg, var(--brand-pink) 0%, var(--brand-orange) 100%)";
 const HOVER_BORDER = "linear-gradient(98.71deg, var(--brand-orange) -0.15%, var(--brand-pink) 99.85%)";
 
 const ChatButton: React.FC<Props> = ({ className = "" }) => {

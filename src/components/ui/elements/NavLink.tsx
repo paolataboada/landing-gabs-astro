@@ -9,7 +9,7 @@ type Props = {
 };
 
 const MENU_ITEM_CLASS = `font-normal text-white text-2xl leading-[130%] 
-    transition-colors cursor-pointer
+    transition-colors cursor-pointer select-none bg-transparent border-none p-0 outline-none
     md:text-[var(--base-grey)] md:text-base md:leading-[130%]`;
 
 const MENU_ITEM_ACTIVE_CLASS = `font-semibold !text-white 
@@ -66,12 +66,13 @@ const NavLink: React.FC<Props> = ({
     };
 
     return (
-        <span
+        <button
+            type="button"
             onClick={handleClick}
             className={`${MENU_ITEM_CLASS} ${active ? MENU_ITEM_ACTIVE_CLASS : ""} ${className ?? ""}`}
         >
             {text}
-        </span>
+        </button>
     );
 };
 
