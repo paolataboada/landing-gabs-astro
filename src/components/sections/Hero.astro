@@ -5,7 +5,7 @@ import CheckIcon from "../../assets/icons/check-icon.svg";
 import MarqueeHero from "@ui/components/MarqueeHero";
 import { hero_cards } from "../../data/hero-cards";
 import MotionWrapper from "@ui/containers/MotionWrapper";
-import ChatButton from "@ui/components/ChatButton.astro";
+import ChatButton from "@ui/components/ChatButton";
 import ViewButton from "@ui/components/ViewButton.astro";
 
 const HERO_SHADOW_STYLES =
@@ -86,7 +86,7 @@ const isSelected = false;
         class="flex flex-col gap-4 mt-10 items-center sm:flex-row sm:justify-center md:justify-start w-full"
       >
         <ViewButton class="w-auto" />
-        <ChatButton class="w-auto" />
+        <ChatButton client:load />
       </div>
     </div>
 

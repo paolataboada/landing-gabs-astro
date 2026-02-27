@@ -16,9 +16,8 @@ const ChatButton: React.FC<Props> = ({ className = "" }) => {
     <a
       href={CONTACT_LINKS.whatsapp}
       target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Chat with our support team now"
-      className={`group relative inline-block rounded-full w-fit cursor-pointer overflow-hidden transition-all duration-300 ${className}`}
+      aria-label="Chat with us"
+      className={`group relative inline-block rounded-full w-full sm:w-fit cursor-pointer overflow-hidden transition-all duration-300 ${className}`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -42,9 +41,9 @@ const ChatButton: React.FC<Props> = ({ className = "" }) => {
         }}
       />
 
-      <div className="relative z-10 flex items-center justify-center gap-[10px] py-[13px] px-6 overflow-hidden">
+      <div className="relative flex items-center justify-center gap-[10px] py-[13px] px-6 overflow-hidden">
         <span
-          className="font-semibold text-lg whitespace-nowrap text-white
+          className="font-semibold text-lg whitespace-nowrap
           transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]
           group-hover:translate-x-[30px]"
         >

@@ -51,7 +51,7 @@ const MobileMenu: React.FC = () => {
                 </ul>
 
                 <div className="flex justify-center mb-8 px-4">
-                    <ChatButton alwaysShowBorder />
+                    <ChatButton className="w-auto!" />
                 </div>
             </nav>
         </>

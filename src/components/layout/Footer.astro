@@ -2,12 +2,8 @@
 import { Image } from "astro:assets";
 import LogoGabs from "@images/logos/gabs.png";
 import ArrowLeftIcon from "@icons/arrow-icon.svg";
-import GradientBorderContainer from "@ui/components/GradientBorderContainer.astro";
-import NavLink from "@ui/elements/NavLink";
 import MotionWrapper from "@ui/containers/MotionWrapper";
-import { CONTACT_LINKS } from "@/constants/contact";
-import IconWhatsappFill from "@assets/icons/whatsapp-icon.svg";
-import ChatButton from "../ui/components/ChatButton.astro";
+import ChatButton from "../ui/components/ChatButton";
 const isSelected = false;
 ---
 
@@ -31,7 +27,7 @@ const isSelected = false;
       />
 
       <div class="text-center order-2 md:order-3">
-        <ChatButton />
+        <ChatButton client:load />
       </div>
 
       <p class="text-neutral-500 order-3 md:order-2">
